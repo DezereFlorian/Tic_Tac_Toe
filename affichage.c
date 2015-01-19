@@ -26,6 +26,6 @@ void affichage_table(void){
 				case rond: printf("O"); break;
 			}
 		}
-		printf("|");
+		printf("|\n");
 	}
 }

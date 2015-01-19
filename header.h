@@ -6,7 +6,7 @@
 * \date 19 Janvier 2014
 */
 
-#include <stlib.h>
+#include <stdlib.h>
 #include <stdio.h>
 #define N 3 //definition de la taille de la matrice
 
@@ -16,3 +16,11 @@ typedef enum {joueur1, joueur2} t_joueur;
 
 t_case table[N][N]; //definition de la matrice servant a contenir les croix et les ronds des 2 joueurs 
 int nb_tour; //definition du nombre de tour total passé
+
+void aleatoire(void);
+void affichage_table(void);
+t_joueur choix_joueur(void);
+t_joueur premier_joueur(void);
+void init_table(void);
+
+

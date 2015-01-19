@@ -9,7 +9,7 @@
 
 /**
 *\fn premier_joueur(void)
-*\brief Fonction permettant de savoir qui du joueur 1 ou du joueur va commencer a jouer
+*\brief Fonction permettant de savoir qui du joueur 1 ou du joueur 2 va commencer a jouer
 */
 t_joueur premier_joueur(void){
 
