@@ -42,6 +42,10 @@ void affichage_table(void){
  	}
  }
  
+/**
+*\fn void afficher_tour(t_joueur joueur)
+*\brief Fonction permettant d'afficher quel joueur va jouer
+*/
  void affiche_tour(t_joueur joueur){
  	affiche_entrer(3);
  	if (joueur == joueur1) printf("Joueur 1, a vous de jouer.");

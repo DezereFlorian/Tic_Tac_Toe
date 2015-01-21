@@ -7,19 +7,22 @@
 */
 #include "header.h"
 
-void main()
-{
+t_case table[N][N];
+int nb_tour = 0;
+
+void main(){
+	int fini = 0;
 	t_joueur joueur;
-	aleatoire(); //on initialise le srand
+	aleatoire();
 	init_table(); // on initialise la matrice
 	joueur = premier_joueur(); // on détermine qui du joueur 1 ou du joueur 2 commence
 	
-	affichage_table(); // on affiche la matrice vide pour commencer le jeu
-	
-	while(!fin_jeu())
-	{
+	while(fini == 0){
+		affichage_table();
+		joueur = choix_joueur();
 		affiche_tour(joueur);
 		remplir_table(joueur);
+		fini = fin_jeu();
 	}
-	
+	victoire();
 }

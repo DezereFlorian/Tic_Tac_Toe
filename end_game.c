@@ -12,8 +12,7 @@
 *\brief Fonction permettant d'afficher le joueur gagnant
 */
 void victoire(void){
-	nb_tour = nb_tour - 1;
-	nb_tour = nb_tour % 2;
+	nb_tour = (nb_tour - 1) % 2;
 	
 	if (nb_tour == 0) printf("Félicitation au joueur 1 pour avoir remporté la partie !");
 	
@@ -24,12 +23,19 @@ void victoire(void){
 *\fn int fin_jeu(void)
 *\brief Fonction permettant de verifier si la partie est fini
 */
+//renvoi 1 si fin de jeu 
 int fin_jeu(void){
-	verif_colonnes();
+	if(verif_colonnes() == 1){
+		return 1;
+	}
 	verif_lignes();
 	verif_diagonales();
 }
 
+//renvoi 1 si il y a une colonne bonne, 0 sinon
 int verif_colonnes(void){
-	
+	int x = 0, y = 1;
+	for(x = 0; x < N; x++){
+		
+	}
 }
