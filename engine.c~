@@ -16,7 +16,7 @@ void main()
 	
 	affichage_table(); // on affiche la matrice vide pour commencer le jeu
 	
-	while(!fin_jeu())
+	while(!gagnant())
 	{
 		affiche_tour(joueur);
 		remplir_table(joueur);

@@ -29,3 +29,22 @@ void affichage_table(void){
 		printf("|\n");
 	}
 }
+
+/**
+*\fn void affiche_entrer(int tmp)
+*\brief Fonction permettant l'affichage d'un certain nombre de ligne vide
+*\param int tmp nombre de retour chariot à afficher
+*/
+ void affiche_entrer(int tmp){
+ 	int i = 0;
+ 	for (i = 0; i < tmp; i++){
+ 		printf("\n");
+ 	}
+ }
+ 
+ void affiche_tour(t_joueur joueur){
+ 	affiche_entrer(3);
+ 	if (joueur == joueur1) printf("Joueur 1, a vous de jouer.");
+ 	else printf("Joueur 2, a vous de jouer.");
+ 	affiche_entrer(2);
+ }

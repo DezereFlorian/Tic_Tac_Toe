@@ -10,7 +10,7 @@
 #include <stdio.h>
 #define N 3 //definition de la taille de la matrice
 
-typedef enum {vide, croix, rond} t_case; //rond correspond aux pions du joueur 2 et croix aux pions du joueur 1
+typedef enum {vide, croix, rond} t_case;
 
 typedef enum {joueur1, joueur2} t_joueur;
 

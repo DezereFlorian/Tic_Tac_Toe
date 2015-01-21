@@ -8,7 +8,7 @@
 #include "header.h"
 
 /**
-*\fn t_joueur choix_joueur(void)
+*\fn choix_joueur
 *\brief Fonction permettant de savoir quel joueur doit jouer
 */
 t_joueur choix_joueur(void){

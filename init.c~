@@ -25,7 +25,7 @@ t_joueur premier_joueur(void){
 	}
 }
 /**
-*\fn void init_table(void)
+*\fn init_table(void)
 *\brief Fonction permettant de passer a l'etat vide la matrice du jeu 
 */
 void init_table(void){
