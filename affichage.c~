@@ -49,7 +49,7 @@ void affichage_table(void){
 */
  void affiche_tour(t_joueur joueur){
  	affiche_entrer(3);
- 	if (joueur == joueur1) printf("Joueur 1, a vous de jouer.\n");
- 	else printf("Joueur 2, a vous de jouer.\n");
+ 	if (joueur == joueur1) printf("Joueur 1, a vous de jouer.");
+ 	else printf("Joueur 2, a vous de jouer.");
  	affiche_entrer(2);
  }
