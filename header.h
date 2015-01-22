@@ -39,3 +39,4 @@ int verif_colonnes(void);
 int verif_lignes(void);
 int verif_diagonales(void);
 void remplir_table(t_joueur joueur);
+int casevide(int x, int y);
