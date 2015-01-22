@@ -35,13 +35,12 @@ int fin_jeu(void){
 int verif_colonnes(void){
 	int x = 1,y;
 	for(y = 0; y < N; y++){
-		if(table[x][y] == croix || table[x][y] == rond)
+		if(table[x][y] == croix && table[x-1][y] == croix && table[x+1][y] == croix)
 		{
-			if(table[x][y] == table[x-1][y] && table[x][y] == table[x+1][y])
-				return 1;
-			else 
-				return 0;
+			return 1;
 		}
+		else if(table[x][y] == rond && table[x-1][y] == rond && table[x+1][y] == rond)
+			return 1;
 		else
 			return 0;
 	}
@@ -51,13 +50,12 @@ int verif_colonnes(void){
 int verif_lignes(void){
 	int x,y = 1;
 	for(x = 0; x < N; x++){
-		if(table[x][y] == croix || table[x][y] == rond)
+		if(table[x][y] == croix && table[x][y-1] == croix && table[x][y+1] == croix)
 		{
-			if(table[x][y] == table[x][y-1] && table[x][y] == table[x][y+1])
-				return 1;
-			else 
-				return 0;
+			return 1;
 		}
+		else if(table[x][y] == rond && table[x][y-1] == rond && table[x][y+1] == rond)
+			return 1;
 		else
 			return 0;
 	}
@@ -66,13 +64,14 @@ int verif_lignes(void){
 //renvoi 1 si il y a une diagonale bonne, 0 sinon
 int verif_diagonales(void){
 	int x = 1,y = 1;
-	if(table[x][y] == croix || table[x][y] == rond)
-	{
-		if((table[x][y] == table[x-1][y+1] && table[x][y] == table[x+1][y-1]) || (table[x][y] == table[x-1][y-1] && table[x][y] == table[x+1][y+1]))
-			return 1;
-		else 
-			return 0;
-	}
+	if(table[x][y] == croix && table[x+1][y-1] == croix && table[x-1][y+1] == croix)
+		return 1;
+	else if(table[x][y] == rond && table[x-1][y-1] == rond && table[x+1][y+1] == rond)
+		return 1;
+	else if(table[x][y] == croix && table[x-1][y-1] == croix && table[x+1][y+1] == croix)
+		return 1;
+	else if(table[x][y] == rond && table[x+1][y-1] == rond && table[x-1][y+1] == rond)
+		return 1;
 	else
-		return 0;
+		return 0;	
 }
