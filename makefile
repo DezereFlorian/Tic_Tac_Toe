@@ -1,8 +1,8 @@
-tic_tac_toe.exe : bilbilotheque.o affichage.o a_qui_le_tour.o end_game.o engine.o matrice.o
-	gcc -o bilbilotheque.c affichage.c a_qui_le_tour.c end_game.c engine.c matrice.c -Wall
+tic_tac_toe.exe : mylib.o affichage.o a_qui_le_tour.o end_game.o engine.o matrice.o
+	gcc -o mylib.c affichage.c a_qui_le_tour.c end_game.c engine.c matrice.c -Wall
 	
-bilbilotheque.o : bilbilotheque.c
-		gcc -o bilbilotheque.o -c bilbilotheque.c -Wall
+mylib.o : mylib.c
+		gcc -o mylib.o -c mylib.c -Wall
 		
 affichage.o : affichage.c 
 		gcc -o affichage.o -c affichage.c -Wall
@@ -19,5 +19,4 @@ engine.o : engine.c
 matrice.o : matrice.c header.h
 		gcc -o matrice.o -c matrice.c -Wall
 		
-clean:
-	rm *.o *~
+clean :: rm 

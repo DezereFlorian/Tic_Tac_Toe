@@ -25,8 +25,8 @@ typedef enum {joueur1, joueur2} t_joueur;
 extern t_case table[N][N]; //definition de la matrice servant a contenir les croix et les ronds des 2 joueurs 
 extern int nb_tour; //definition du nombre de tour total passé
 
-void aleatoire (void);
-int verif_saisie (int petit, int grand);
+void aleatoire(void);
+int verif_saisie(int petit, int grand);
 void affichage_table(void);
 void affiche_entrer(int tmp);
 void affiche_tour(t_joueur joueur);

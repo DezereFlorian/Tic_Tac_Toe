@@ -10,7 +10,7 @@
 t_case table[N][N];
 int nb_tour = 0;
 
-void main(){
+int main(){
 	int fini = 0;
 	t_joueur joueur;
 	aleatoire();
@@ -25,4 +25,6 @@ void main(){
 		fini = fin_jeu();
 	}
 	victoire();
+	
+	return EXIT_SUCCESS;
 }
