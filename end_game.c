@@ -21,41 +21,43 @@ void victoire(void){
 
 /**
 *\fn int fin_jeu(void)
-*\brief Fonction permettant de verifier si la partie est fini
+*\brief Fonction permettant de verifier si la partie est finie
 */
 //renvoi 1 si fin de jeu 
 int fin_jeu(void){
-	/*if(verif_colonnes() == 1){
+	if(verif_colonnes() || verif_lignes() || verif_diagonales())
 		return 1;
-	}*/
-	verif_lignes();
-	verif_diagonales();
-	return 0;
+	else
+		return 0;
 }
 
 //renvoi 1 si il y a une colonne bonne, 0 sinon
 int verif_colonnes(void){
-	/*int x = 0, y = 1;
-	for(x = 0; x < N; x++){
-		
-	}*/
-	return 0;
+	int x = 1,y;
+	for(y = 0; y < N; y++){
+		if(table[x][y] == table[x-1][y] && table[x][y] == table[x+1][y])
+			return 1;
+		else 
+			return 0;
+	}
 }
 
 //renvoi 1 si il y a une ligne bonne, 0 sinon
 int verif_lignes(void){
-	/*int x = 0, y = 1;
+	int x,y = 1;
 	for(x = 0; x < N; x++){
-		
-	}*/
-	return 0;
+		if(table[x][y] == table[x][y-1] && table[x][y] == table[x][y+1])
+			return 1;
+		else 
+			return 0;
+	}
 }
 
 //renvoi 1 si il y a une diagonale bonne, 0 sinon
 int verif_diagonales(void){
-	/*int x = 0, y = 1;
-	for(x = 0; x < N; x++){
-		
-	}*/
-	return 0;
+	int x = 1,y = 1;
+	if((table[x][y] == table[x-1][y+1] && table[x][y] == table[x+1][y-1]) || (table[x][y] == table[x-1][y-1] && table[x][y] == table[x+1][y+1]))
+		return 1;
+	else 
+		return 0;
 }
