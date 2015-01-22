@@ -10,7 +10,7 @@
 /**
 *\fn void remplir_table(t_joueur joueur)
 *\brief Fonction permettant de remplir une case de la table par le joueur
-*\param t_joueur joueur permet de savoir quel joueur jouer
+*\param t_joueur joueur permet de savoir quel joueur joue
 */
 void remplir_table(t_joueur joueur){
 	int x = 0, y = 0;
