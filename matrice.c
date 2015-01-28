@@ -10,15 +10,20 @@
 /**
 *\fn void remplir_table(t_joueur joueur)
 *\brief Fonction permettant de remplir une case de la table par le joueur
-*\param t_joueur joueur permet de savoir quel joueur joue
+*\param t_joueur joueur permet de savoir quel joueur jouer
 */
 void remplir_table(t_joueur joueur){
 	int x = 0, y = 0;
 	affiche_entrer(2);
+
 	printf("Entrez les coordonnees de la case dans laquelle vous voulez jouer (entre 1 et 3): ");
-	x = verif_saisie(1,3) - 1;
-	y = verif_saisie(1,3) - 1;
-		
+	do{
+		x = verif_saisie(1,3) - 1;
+		y = verif_saisie(1,3) - 1;
+		if (table[x][y] != vide) printf("Cette case est deja pleine... Saisissez d'autres valeurs (toujours entre 1 et 3): ");
+	}
+	while((table[x][y] != vide));
+
 	if(joueur == joueur1) table[x][y] = croix;
 	else table[x][y] = rond;
 	

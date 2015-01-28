@@ -44,11 +44,12 @@ int verif_colonnes(void){
 		else
 			return 0;
 	}
+	return 0;
 }
 
 //renvoi 1 si il y a une ligne bonne, 0 sinon
 int verif_lignes(void){
-	int x,y = 1;
+	int x = 0, y = 1;
 	for(x = 0; x < N; x++){
 		if(table[x][y] == croix && table[x][y-1] == croix && table[x][y+1] == croix)
 		{
@@ -59,11 +60,12 @@ int verif_lignes(void){
 		else
 			return 0;
 	}
+	return 0;
 }
 
 //renvoi 1 si il y a une diagonale bonne, 0 sinon
 int verif_diagonales(void){
-	int x = 1,y = 1;
+	int x = 1, y = 1;
 	if(table[x][y] == croix && table[x+1][y-1] == croix && table[x-1][y+1] == croix)
 		return 1;
 	else if(table[x][y] == rond && table[x-1][y-1] == rond && table[x+1][y+1] == rond)

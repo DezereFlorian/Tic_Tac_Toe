@@ -24,7 +24,9 @@ int main(){
 		remplir_table(joueur);
 		fini = fin_jeu();
 	}
+	affichage_table();
 	victoire();
+	affiche_entrer(3);
 	
 	return EXIT_SUCCESS;
 }

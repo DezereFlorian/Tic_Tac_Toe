@@ -3,7 +3,7 @@ tic_tac_toe.exe : bilbilotheque.o affichage.o a_qui_le_tour.o end_game.o engine.
 	
 bilbilotheque.o : bilbilotheque.c
 	@gcc -c bilbilotheque.c -Wall
-		
+	
 affichage.o : affichage.c 
 	@gcc -c affichage.c -Wall
 		
@@ -19,4 +19,5 @@ engine.o : engine.c
 matrice.o : matrice.c header.h
 	@gcc -c matrice.c -Wall
 		
-clean :: rm 
+clean : 
+	rm *.o 
