@@ -60,7 +60,7 @@ int fin_jeu(void){
 
 //renvoi 1 si il y a une colonne bonne, 0 sinon
 int verif_colonnes(void){
-	int x = 1,y;
+	int x = 1, y = 0;
 	for(y = 0; y < N; y++){
 		if(table[x][y] == croix && table[x-1][y] == croix && table[x+1][y] == croix)
 		{

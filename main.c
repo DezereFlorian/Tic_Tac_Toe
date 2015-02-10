@@ -10,8 +10,9 @@
 t_case table[N][N];
 int nb_tour = 0;
 
-int main(){
+int main () {
 	int fini = 0;
+	nb_tour = 0;
 	t_joueur joueur;
 	aleatoire();
 	init_table(); // on initialise la matrice

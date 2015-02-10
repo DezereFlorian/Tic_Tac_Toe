@@ -6,7 +6,6 @@
 * \date 22 Janvier 2014
 */
 #include "header.h"
-#include <time.h>
 
 /**
 *\fn void aleatoire (void)
