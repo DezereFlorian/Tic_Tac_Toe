@@ -1,5 +1,5 @@
 /**
-* \file moteur.c
+* \file engine.c
 * \brief Page contenant toutes les fonctions necessaires au jeu
 * \author triodebeignets
 * \version 1.0
@@ -58,6 +58,10 @@ int fin_jeu(void){
 		return 0;
 }
 
+/**
+*\fn int verif_colonnes(void)
+*\brief Fonction permettant de verifier si une colonne de la table de jeu est rempli de même pions
+*/
 //renvoi 1 si il y a une colonne bonne, 0 sinon
 int verif_colonnes(void){
 	int x = 1, y = 0;
@@ -72,6 +76,10 @@ int verif_colonnes(void){
 	return 0;
 }
 
+/**
+*\fn int verif_lignes(void)
+*\brief Fonction permettant de verifier si une colonne de la table de jeu est rempli de même pions
+*/
 //renvoi 1 si il y a une ligne bonne, 0 sinon
 int verif_lignes(void){
 	int x = 0, y = 1;
@@ -86,6 +94,10 @@ int verif_lignes(void){
 	return 0;	
 }
 
+/**
+*\fn int verif_diagonales(void)
+*\brief Fonction permettant de verifier si une colonne de la table de jeu est rempli de même pions
+*/
 //renvoi 1 si il y a une diagonale bonne, 0 sinon
 int verif_diagonales(void){
 	int x = 1, y = 1;
@@ -162,8 +174,8 @@ void affichage_table(void){
 }
 
 /**
-*\fn void afficher_tour(t_joueur joueur)
-*\brief Fonction permettant d'afficher quel joueur va jouer
+* \fn void affiche_tour(t_joueur joueur)
+* \brief Fonction permettant d'afficher quel joueur va jouer
 */
  void affiche_tour(t_joueur joueur){
  	affiche_entrer(3);
