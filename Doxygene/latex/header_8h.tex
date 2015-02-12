@@ -1,0 +1,166 @@
+\hypertarget{header_8h}{\section{Référence du fichier header.\+h}
+\label{header_8h}\index{header.\+h@{header.\+h}}
+}
+
+
+Page contenant les defintions de tout ce qui est nécéssaire au tic tac toe.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+Graphe des dépendances par inclusion de header.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{header_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{header_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{header_8h_a0240ac851181b84ac374872dc5434ee4}{\#define {\bfseries N}~3}\label{header_8h_a0240ac851181b84ac374872dc5434ee4}
+
+\end{DoxyCompactItemize}
+\subsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{header_8h_ab21a60e1517c8d253cc83c12f6e027f3}{enum \hyperlink{header_8h_ab21a60e1517c8d253cc83c12f6e027f3}{t\+\_\+case} \{ {\bfseries vide}, 
+{\bfseries croix}, 
+{\bfseries rond}
+ \}}\label{header_8h_ab21a60e1517c8d253cc83c12f6e027f3}
+
+\begin{DoxyCompactList}\small\item\em definition d'une énumération de type t\+\_\+case representant le contenu des cases de la table de jeu (rond pour joueur 2 et croix pour joueur 1) \end{DoxyCompactList}\item 
+\hypertarget{header_8h_ac77a18127be97d5680b10233bf102d09}{enum \hyperlink{header_8h_ac77a18127be97d5680b10233bf102d09}{t\+\_\+joueur} \{ {\bfseries joueur1}, 
+{\bfseries joueur2}
+ \}}\label{header_8h_ac77a18127be97d5680b10233bf102d09}
+
+\begin{DoxyCompactList}\small\item\em definition d'une énumération de type t\+\_\+joueur permettant de connaitre le joueur en cours de jeu \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{header_8h_aaeeedbd134251291fe79c71c943ec899}{void \hyperlink{header_8h_aaeeedbd134251291fe79c71c943ec899}{aleatoire} (void)}\label{header_8h_aaeeedbd134251291fe79c71c943ec899}
+
+\begin{DoxyCompactList}\small\item\em Fonction permettant de creer l'aleatoire. \end{DoxyCompactList}\item 
+int \hyperlink{header_8h_a5d77334ef0eb544c90e47f78b6e898cd}{verif\+\_\+saisie} (int petit, int grand)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de verifier si la saisie de l'utilisateur est correcte. \end{DoxyCompactList}\item 
+void \hyperlink{header_8h_afdabedbdaec06f1a4ab234044b4df6fc}{affiche\+\_\+entrer} (int tmp)
+\begin{DoxyCompactList}\small\item\em Fonction permettant l'affichage d'un certain nombre de ligne vide. \end{DoxyCompactList}\item 
+\hypertarget{header_8h_aa268c4c4b7f046ee706f57246ef1573a}{\hyperlink{header_8h_ac77a18127be97d5680b10233bf102d09}{t\+\_\+joueur} \hyperlink{header_8h_aa268c4c4b7f046ee706f57246ef1573a}{choix\+\_\+joueur} (void)}\label{header_8h_aa268c4c4b7f046ee706f57246ef1573a}
+
+\begin{DoxyCompactList}\small\item\em Fonction permettant de savoir quel joueur doit jouer. \end{DoxyCompactList}\item 
+\hypertarget{header_8h_a3e120efb274a01b45af7bb3616effc8c}{\hyperlink{header_8h_ac77a18127be97d5680b10233bf102d09}{t\+\_\+joueur} \hyperlink{header_8h_a3e120efb274a01b45af7bb3616effc8c}{premier\+\_\+joueur} (void)}\label{header_8h_a3e120efb274a01b45af7bb3616effc8c}
+
+\begin{DoxyCompactList}\small\item\em Fonction permettant de savoir qui du joueur 1 ou du joueur 2 va commencer a jouer. \end{DoxyCompactList}\item 
+\hypertarget{header_8h_ac56a10e278cb046501b86d931c3600b8}{void \hyperlink{header_8h_ac56a10e278cb046501b86d931c3600b8}{victoire} (void)}\label{header_8h_ac56a10e278cb046501b86d931c3600b8}
+
+\begin{DoxyCompactList}\small\item\em Fonction permettant d'afficher le joueur gagnant. \end{DoxyCompactList}\item 
+\hypertarget{header_8h_a18729c7b80c8918f251c94dfd1dab17b}{int \hyperlink{header_8h_a18729c7b80c8918f251c94dfd1dab17b}{fin\+\_\+jeu} (void)}\label{header_8h_a18729c7b80c8918f251c94dfd1dab17b}
+
+\begin{DoxyCompactList}\small\item\em Fonction permettant de verifier si la partie est finie. \end{DoxyCompactList}\item 
+\hypertarget{header_8h_ad78f824108b1b985e899d092e810392f}{int \hyperlink{header_8h_ad78f824108b1b985e899d092e810392f}{verif\+\_\+colonnes} (void)}\label{header_8h_ad78f824108b1b985e899d092e810392f}
+
+\begin{DoxyCompactList}\small\item\em Fonction permettant de verifier si une colonne de la table de jeu est rempli de m�me pions. \end{DoxyCompactList}\item 
+\hypertarget{header_8h_ab2da4309c4408450c59af322b4707f51}{int \hyperlink{header_8h_ab2da4309c4408450c59af322b4707f51}{verif\+\_\+lignes} (void)}\label{header_8h_ab2da4309c4408450c59af322b4707f51}
+
+\begin{DoxyCompactList}\small\item\em Fonction permettant de verifier si une colonne de la table de jeu est rempli de m�me pions. \end{DoxyCompactList}\item 
+\hypertarget{header_8h_a02d8aac1c040e305611ffe0ede6de0e3}{int \hyperlink{header_8h_a02d8aac1c040e305611ffe0ede6de0e3}{verif\+\_\+diagonales} (void)}\label{header_8h_a02d8aac1c040e305611ffe0ede6de0e3}
+
+\begin{DoxyCompactList}\small\item\em Fonction permettant de verifier si une colonne de la table de jeu est rempli de m�me pions. \end{DoxyCompactList}\item 
+void \hyperlink{header_8h_afdfd7971780376a3fd4ce80ca40805b5}{remplir\+\_\+table} (\hyperlink{header_8h_ac77a18127be97d5680b10233bf102d09}{t\+\_\+joueur} joueur)
+\begin{DoxyCompactList}\small\item\em Fonction permettant de remplir une case de la table par le joueur. \end{DoxyCompactList}\item 
+\hypertarget{header_8h_a568a55cbffe29dee8b6f668065977d61}{void \hyperlink{header_8h_a568a55cbffe29dee8b6f668065977d61}{init\+\_\+table} (void)}\label{header_8h_a568a55cbffe29dee8b6f668065977d61}
+
+\begin{DoxyCompactList}\small\item\em Fonction permettant de passer a l'etat vide la matrice du jeu. \end{DoxyCompactList}\item 
+\hypertarget{header_8h_a3e6705b70658a81654386ae9bc467ec8}{void \hyperlink{header_8h_a3e6705b70658a81654386ae9bc467ec8}{affichage\+\_\+table} (void)}\label{header_8h_a3e6705b70658a81654386ae9bc467ec8}
+
+\begin{DoxyCompactList}\small\item\em Fonction permettant d'afficher la table de jeu. \end{DoxyCompactList}\item 
+\hypertarget{header_8h_a37a665341a6c6d1c93c28842798a450e}{void \hyperlink{header_8h_a37a665341a6c6d1c93c28842798a450e}{affiche\+\_\+tour} (\hyperlink{header_8h_ac77a18127be97d5680b10233bf102d09}{t\+\_\+joueur} joueur)}\label{header_8h_a37a665341a6c6d1c93c28842798a450e}
+
+\begin{DoxyCompactList}\small\item\em Fonction permettant d'afficher quel joueur va jouer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{header_8h_a25df6dc581cce931468011cdb1c5741d}{\hyperlink{header_8h_ab21a60e1517c8d253cc83c12f6e027f3}{t\+\_\+case} {\bfseries table} \mbox{[}N\mbox{]}\mbox{[}N\mbox{]}}\label{header_8h_a25df6dc581cce931468011cdb1c5741d}
+
+\item 
+\hypertarget{header_8h_ab62d6cef413f5ca703848194be177ec1}{int {\bfseries nb\+\_\+tour}}\label{header_8h_ab62d6cef413f5ca703848194be177ec1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Page contenant les defintions de tout ce qui est nécéssaire au tic tac toe. 
+
+\begin{DoxyAuthor}{Auteur}
+triodebeignets 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+19 Janvier 2014 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{header_8h_afdabedbdaec06f1a4ab234044b4df6fc}{\index{header.\+h@{header.\+h}!affiche\+\_\+entrer@{affiche\+\_\+entrer}}
+\index{affiche\+\_\+entrer@{affiche\+\_\+entrer}!header.\+h@{header.\+h}}
+\subsubsection[{affiche\+\_\+entrer}]{\setlength{\rightskip}{0pt plus 5cm}void affiche\+\_\+entrer (
+\begin{DoxyParamCaption}
+\item[{int}]{tmp}
+\end{DoxyParamCaption}
+)}}\label{header_8h_afdabedbdaec06f1a4ab234044b4df6fc}
+
+
+Fonction permettant l'affichage d'un certain nombre de ligne vide. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em int} & tmp nombre de retour chariot à afficher \\
+\hline
+\end{DoxyParams}
+\hypertarget{header_8h_afdfd7971780376a3fd4ce80ca40805b5}{\index{header.\+h@{header.\+h}!remplir\+\_\+table@{remplir\+\_\+table}}
+\index{remplir\+\_\+table@{remplir\+\_\+table}!header.\+h@{header.\+h}}
+\subsubsection[{remplir\+\_\+table}]{\setlength{\rightskip}{0pt plus 5cm}void remplir\+\_\+table (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+joueur}}]{joueur}
+\end{DoxyParamCaption}
+)}}\label{header_8h_afdfd7971780376a3fd4ce80ca40805b5}
+
+
+Fonction permettant de remplir une case de la table par le joueur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em t\+\_\+joueur} & joueur permet de savoir quel joueur jouer \\
+\hline
+\end{DoxyParams}
+\hypertarget{header_8h_a5d77334ef0eb544c90e47f78b6e898cd}{\index{header.\+h@{header.\+h}!verif\+\_\+saisie@{verif\+\_\+saisie}}
+\index{verif\+\_\+saisie@{verif\+\_\+saisie}!header.\+h@{header.\+h}}
+\subsubsection[{verif\+\_\+saisie}]{\setlength{\rightskip}{0pt plus 5cm}int verif\+\_\+saisie (
+\begin{DoxyParamCaption}
+\item[{int}]{petit, }
+\item[{int}]{grand}
+\end{DoxyParamCaption}
+)}}\label{header_8h_a5d77334ef0eb544c90e47f78b6e898cd}
+
+
+Fonction permettant de verifier si la saisie de l'utilisateur est correcte. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em int} & petit, int grand paramètre pour verifier si le nombre entrer n'est pas trop grand ou trop petit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+renvoi le nombre entrer par l'utilisateur 
+\end{DoxyReturn}

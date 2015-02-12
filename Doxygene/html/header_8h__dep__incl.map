@@ -1,0 +1,5 @@
+<map id="header.h" name="header.h">
+<area shape="rect" id="node2" href="$bilbilotheque_8c.html" title="Page contenant les definitons des fonctions importantes a tous les programmes. " alt="" coords="5,80,111,107"/>
+<area shape="rect" id="node3" href="$engine_8c.html" title="Page contenant toutes les fonctions necessaires au jeu. " alt="" coords="135,80,205,107"/>
+<area shape="rect" id="node4" href="$main_8c.html" title="Page contenant le code d&#39;execution du tic tac toe. " alt="" coords="230,80,291,107"/>
+</map>
