@@ -231,6 +231,7 @@ void multijoueur(t_joueur joueur){
 			remplir_table(joueur);
 			fini = fin_jeu();
 			nb_tour++;
+			fini = fin_jeu();
 		}
 	}
 }
