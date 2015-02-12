@@ -40,4 +40,6 @@ int verif_diagonales(void);
 void remplir_table(t_joueur joueur);
 void init_table(void);
 void affichage_table(void);
-void affiche_tour(t_joueur joueur);
+void affiche_tour(t_joueur joueur, int i);
+void IA_nulle(void);
+void multijoueur(t_joueur joueur);

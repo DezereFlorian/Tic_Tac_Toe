@@ -21,10 +21,8 @@ t_joueur choix_joueur(void){
 *\brief Fonction permettant de savoir qui du joueur 1 ou du joueur 2 va commencer a jouer
 */
 t_joueur premier_joueur(void){
-	int tmp;
-	tmp = rand() % 100;
 	
-	if (tmp % 2 == 0) {
+	if (rand() % 100 % 2 == 0) {
 		nb_tour = 0;
 		return joueur1;
 	}
@@ -120,8 +118,6 @@ void remplir_table(t_joueur joueur){
 
 	if(joueur == joueur1) table[x][y] = croix;
 	else table[x][y] = rond;
-	
-	nb_tour++;
 }
 
 /**
@@ -162,12 +158,67 @@ void affichage_table(void){
 }
 
 /**
-*\fn void afficher_tour(t_joueur joueur)
+*\fn void afficher_tour(t_joueur joueur, int i)
 *\brief Fonction permettant d'afficher quel joueur va jouer
 */
- void affiche_tour(t_joueur joueur){
+ void affiche_tour(t_joueur joueur, int i){
  	affiche_entrer(3);
- 	if (joueur == joueur1) printf("Joueur 1, a vous de jouer.");
- 	else printf("Joueur 2, a vous de jouer.");
+ 	if (i < 0) printf("L'IA va jouer");
+ 	else if (joueur == joueur1) printf("Joueur 1, a vous de jouer.");
+ 	else if (joueur == joueur2) printf("Joueur 2, a vous de jouer.");
  	affiche_entrer(2);
  }
+ 
+/**
+* \fn void IA_nulle(void)
+* \brief Fonction permettant a une IA debutante de jouer un pion
+*/
+void IA_nulle(void){
+	int x = 0, y = 0;
+	do {
+		x = rand() % 3;
+		y = rand() % 3;
+	}	
+	while (table[x][y] != vide);
+	table[x][y] = rond;
+}
+
+/**
+* \fn void multijoueur(t_joueur joueur)
+* \brief Fonction permettant de demander si le joueur veut jouer contre une IA ou avec un ami
+* \param joueur permet de savoir qui doit jouer en premier en PvP
+*/
+void multijoueur(t_joueur joueur){
+	int fini = 0;
+	int multi = -1;
+	int cpt = 0;
+	affiche_entrer(2);
+	printf("Voulez-vous jouer contre une IA ou un partenaire?\n");
+	printf("Contre une IA : 1\nContre un partenaire : 2\n");
+	scanf("%i", &multi);
+	if (multi == 1){
+		while(fini == 0){
+			affichage_table();
+			if(cpt % 2 != 0){
+				affiche_tour(joueur, 0);
+				remplir_table(joueur);
+				cpt++;
+			} else {
+				affiche_tour(joueur, -1);
+				IA_nulle();
+				cpt++;
+			}
+			fini = fin_jeu();
+		}
+	} else {
+		joueur = premier_joueur(); // on détermine qui du joueur 1 ou du joueur 2 commence
+		while(fini == 0){
+			affichage_table();
+			joueur = choix_joueur();
+			affiche_tour(joueur, 0);
+			remplir_table(joueur);
+			fini = fin_jeu();
+			nb_tour++;
+		}
+	}
+}
