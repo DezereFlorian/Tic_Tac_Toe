@@ -34,6 +34,7 @@ t_joueur choix_joueur(void);
 t_joueur premier_joueur(void);
 void victoire(void);
 int fin_jeu(void);
+int verif_match_nul(void);
 int verif_colonnes(void);
 int verif_lignes(void);
 int verif_diagonales(void);

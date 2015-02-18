@@ -48,7 +48,7 @@ void victoire(void){
 *\fn int fin_jeu(void)
 *\brief Fonction permettant de verifier si la partie est finie
 */
-//renvoi 1 si fin de jeu 
+//renvoie 1 si fin de jeu 
 int fin_jeu(void){
 	if(verif_colonnes() || verif_lignes() || verif_diagonales())
 		return 1;
@@ -57,10 +57,29 @@ int fin_jeu(void){
 }
 
 /**
+*\fn int verif_match_nul(void)
+*\brief Fonction permettant de verifier si la table est remplie sans qu'il y ait de gagnant
+*/
+//renvoie 1 si il y a match nul, 0 sinon
+int verif_match_nul(void)
+{
+	int x, y;
+	for(x=0;x<N;x++)
+	{
+		for(y=0;y<N;y++)
+		{
+			if(table[x][y] == vide)
+				return 0;
+		}
+	}
+	return 1;
+}
+
+/**
 *\fn int verif_colonnes(void)
 *\brief Fonction permettant de verifier si une colonne de la table de jeu est rempli de même pions
 */
-//renvoi 1 si il y a une colonne bonne, 0 sinon
+//renvoie 1 si il y a une colonne bonne, 0 sinon
 int verif_colonnes(void){
 	int x = 1, y = 0;
 	for(y = 0; y < N; y++){
@@ -78,7 +97,7 @@ int verif_colonnes(void){
 *\fn int verif_lignes(void)
 *\brief Fonction permettant de verifier si une colonne de la table de jeu est rempli de même pions
 */
-//renvoi 1 si il y a une ligne bonne, 0 sinon
+//renvoie 1 si il y a une ligne bonne, 0 sinon
 int verif_lignes(void){
 	int x = 0, y = 1;
 	for(x = 0; x < N; x++){
@@ -96,7 +115,7 @@ int verif_lignes(void){
 *\fn int verif_diagonales(void)
 *\brief Fonction permettant de verifier si une colonne de la table de jeu est rempli de même pions
 */
-//renvoi 1 si il y a une diagonale bonne, 0 sinon
+//renvoie 1 si il y a une diagonale bonne, 0 sinon
 int verif_diagonales(void){
 	int x = 1, y = 1;
 	if(table[x][y] == croix && table[x+1][y-1] == croix && table[x-1][y+1] == croix)
@@ -220,7 +239,24 @@ void multijoueur(t_joueur joueur){
 				IA_nulle();
 				cpt++;
 			}
-			fini = fin_jeu();
+			if(fin_jeu())
+			{
+				fini = 1;
+			}
+			else if(verif_match_nul())
+			{
+				fini = 2;
+			}
+			else
+				fini = fin_jeu();
+		}
+		if(fini==1)
+		{
+			victoire();
+		}
+		else
+		{
+			printf("Match nul !");
 		}
 	} else {
 		joueur = premier_joueur(); // on détermine qui du joueur 1 ou du joueur 2 commence
@@ -231,7 +267,24 @@ void multijoueur(t_joueur joueur){
 			remplir_table(joueur);
 			fini = fin_jeu();
 			nb_tour++;
-			fini = fin_jeu();
+			if(fin_jeu())
+			{
+				fini = 1;
+			}
+			else if(verif_match_nul())
+			{
+				fini = 2;
+			}
+			else
+				fini = fin_jeu();
+		}
+		if(fini==1)
+		{
+			victoire();
+		}
+		else
+		{
+			printf("Match nul !");
 		}
 	}
 }

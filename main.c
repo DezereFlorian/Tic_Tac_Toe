@@ -16,7 +16,6 @@ int main () {
 	init_table(); // on initialise la matrice
 	multijoueur(joueur);
 	affichage_table();
-	victoire();
 	affiche_entrer(3);
 	
 	return EXIT_SUCCESS;
