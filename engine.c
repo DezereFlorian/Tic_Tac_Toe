@@ -45,6 +45,18 @@ void victoire(void){
 }
 
 /**
+*\fn void victoire_IA(void)
+*\brief Fonction permettant d'afficher le joueur gagnant contre l'IA
+*/
+void victoire_IA(void){
+	nb_tour = (nb_tour - 1) % 2;
+	
+	if (nb_tour == 0) printf("Vous avez perdu contre l'Intelligence Artificielle !");
+	
+	else printf("Félicitation, vous avez remporté la partie !");
+}
+
+/**
 *\fn int fin_jeu(void)
 *\brief Fonction permettant de verifier si la partie est finie
 */
@@ -222,7 +234,6 @@ void IA_nulle(void){
 void multijoueur(t_joueur joueur){
 	int fini = 0;
 	int multi = -1;
-	int cpt = 0;
 	affiche_entrer(2);
 	printf("Voulez-vous jouer contre une IA ou un partenaire?\n");
 	printf("Contre une IA : 1\nContre un partenaire : 2\n");
@@ -230,14 +241,14 @@ void multijoueur(t_joueur joueur){
 	if (multi == 1){
 		while(fini == 0){
 			affichage_table();
-			if(cpt % 2 != 0){
+			if(nb_tour % 2 != 0){
 				affiche_tour(joueur, 0);
 				remplir_table(joueur);
-				cpt++;
+				nb_tour++;
 			} else {
 				affiche_tour(joueur, -1);
 				IA_nulle();
-				cpt++;
+				nb_tour++;
 			}
 			if(fin_jeu())
 			{
@@ -252,10 +263,12 @@ void multijoueur(t_joueur joueur){
 		}
 		if(fini==1)
 		{
-			victoire();
+			affichage_table();
+			victoire_IA();
 		}
 		else
 		{
+			affichage_table();
 			printf("Match nul !");
 		}
 	} else {
@@ -280,10 +293,12 @@ void multijoueur(t_joueur joueur){
 		}
 		if(fini==1)
 		{
+			affichage_table();
 			victoire();
 		}
 		else
 		{
+			affichage_table();
 			printf("Match nul !");
 		}
 	}

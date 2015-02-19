@@ -33,6 +33,7 @@ void affiche_entrer(int tmp);
 t_joueur choix_joueur(void);
 t_joueur premier_joueur(void);
 void victoire(void);
+void victoire_IA(void);
 int fin_jeu(void);
 int verif_match_nul(void);
 int verif_colonnes(void);

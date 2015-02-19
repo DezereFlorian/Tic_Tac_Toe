@@ -15,7 +15,7 @@ int main () {
 	aleatoire();
 	init_table(); // on initialise la matrice
 	multijoueur(joueur);
-	affichage_table();
+	//affichage_table();
 	affiche_entrer(3);
 	
 	return EXIT_SUCCESS;
