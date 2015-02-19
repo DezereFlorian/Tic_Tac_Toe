@@ -239,6 +239,8 @@ void multijoueur(t_joueur joueur){
 	printf("Contre une IA : 1\nContre un partenaire : 2\n");
 	scanf("%i", &multi);
 	if (multi == 1){
+		joueur = premier_joueur();
+		joueur = joueur1;
 		while(fini == 0){
 			affichage_table();
 			if(nb_tour % 2 != 0){
