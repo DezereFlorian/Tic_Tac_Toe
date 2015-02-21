@@ -238,7 +238,7 @@ int IA_normal(void){
 	if (table[0][0]==vide && table[0][1]==rond && table[0][2]==rond) { x=0; y=0; table[x][y] = rond; return 1; }
 	if (table[1][0]==vide && table[1][1]==rond && table[1][2]==rond) { x=1; y=0; table[x][y] = rond; return 1; }
 	if (table[2][0]==vide && table[2][1]==rond && table[2][2]==rond) { x=2; y=0; table[x][y] = rond; return 1; }
-	if (table[0][0]==rond && table[0][1]==vide && table[0][2]==rond) { x=0; y=2; table[x][y] = rond; return 1; }
+	if (table[0][0]==rond && table[0][1]==vide && table[0][2]==rond) { x=0; y=1; table[x][y] = rond; return 1; }
 	if (table[1][0]==rond && table[1][1]==vide && table[1][2]==rond) { x=1; y=1; table[x][y] = rond; return 1; }
 	if (table[2][0]==rond && table[2][1]==vide && table[2][2]==rond) { x=2; y=1; table[x][y] = rond; return 1; }
 	if (table[0][0]==rond && table[1][0]==rond && table[2][0]==vide) { x=2; y=0; table[x][y] = rond; return 1; }
@@ -350,9 +350,7 @@ void multijoueur(t_joueur joueur){
 					nb_tour++;
 				} else {
 					affiche_tour(joueur, -1);
-					int ia_normal;
-					ia_normal = IA_normal();
-					if(ia_normal == 0)
+					if(!IA_normal())
 					{
 						IA_nulle();
 					}
