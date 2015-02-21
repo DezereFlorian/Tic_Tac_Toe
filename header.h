@@ -44,4 +44,5 @@ void init_table(void);
 void affichage_table(void);
 void affiche_tour(t_joueur joueur, int i);
 void IA_nulle(void);
+int IA_normal(void);
 void multijoueur(t_joueur joueur);

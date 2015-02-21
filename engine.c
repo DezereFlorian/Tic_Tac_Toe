@@ -227,6 +227,65 @@ void IA_nulle(void){
 }
 
 /**
+* \fn void IA_normal(void)
+* \brief Fonction permettant a une IA de niveau normal de jouer un pion
+*/
+int IA_normal(void){
+	int x = 0, y = 0;
+	if (table[0][0]==rond && table[0][1]==rond && table[0][2]==vide) { x=0; y=2; table[x][y] = rond; return 1; }
+	if (table[1][0]==rond && table[1][1]==rond && table[1][2]==vide) { x=1; y=2; table[x][y] = rond; return 1; }
+	if (table[2][0]==rond && table[2][1]==rond && table[2][2]==vide) { x=2; y=2; table[x][y] = rond; return 1; }
+	if (table[0][0]==vide && table[0][1]==rond && table[0][2]==rond) { x=0; y=0; table[x][y] = rond; return 1; }
+	if (table[1][0]==vide && table[1][1]==rond && table[1][2]==rond) { x=1; y=0; table[x][y] = rond; return 1; }
+	if (table[2][0]==vide && table[2][1]==rond && table[2][2]==rond) { x=2; y=0; table[x][y] = rond; return 1; }
+	if (table[0][0]==rond && table[0][1]==vide && table[0][2]==rond) { x=0; y=2; table[x][y] = rond; return 1; }
+	if (table[1][0]==rond && table[1][1]==vide && table[1][2]==rond) { x=1; y=1; table[x][y] = rond; return 1; }
+	if (table[2][0]==rond && table[2][1]==vide && table[2][2]==rond) { x=2; y=1; table[x][y] = rond; return 1; }
+	if (table[0][0]==rond && table[1][0]==rond && table[2][0]==vide) { x=2; y=0; table[x][y] = rond; return 1; }
+	if (table[0][1]==rond && table[1][1]==rond && table[2][1]==vide) { x=2; y=1; table[x][y] = rond; return 1; }
+	if (table[0][2]==rond && table[1][2]==rond && table[2][2]==vide) { x=2; y=2; table[x][y] = rond; return 1; }
+	if (table[0][0]==vide && table[1][0]==rond && table[2][0]==rond) { x=0; y=0; table[x][y] = rond; return 1; }
+	if (table[0][1]==vide && table[1][1]==rond && table[2][1]==rond) { x=0; y=1; table[x][y] = rond; return 1; }
+	if (table[0][2]==vide && table[1][2]==rond && table[2][2]==rond) { x=0; y=2; table[x][y] = rond; return 1; }
+	if (table[0][0]==rond && table[1][0]==vide && table[2][0]==rond) { x=1; y=0; table[x][y] = rond; return 1; }
+	if (table[0][1]==rond && table[1][1]==vide && table[2][1]==rond) { x=1; y=1; table[x][y] = rond; return 1; }
+	if (table[0][2]==rond && table[1][2]==vide && table[2][2]==rond) { x=1; y=2; table[x][y] = rond; return 1; }
+	if (table[0][0]==rond && table[1][1]==vide && table[2][2]==rond) { x=1; y=1; table[x][y] = rond; return 1; }
+	if (table[0][2]==rond && table[1][1]==vide && table[2][0]==rond) { x=1; y=1; table[x][y] = rond; return 1; }
+	if (table[0][0]==vide && table[1][1]==rond && table[2][2]==rond) { x=0; y=0; table[x][y] = rond; return 1; }
+	if (table[0][2]==vide && table[1][1]==rond && table[2][0]==rond) { x=0; y=2; table[x][y] = rond; return 1; }
+	if (table[0][0]==rond && table[1][1]==rond && table[2][2]==vide) { x=2; y=2; table[x][y] = rond; return 1; }
+	if (table[0][2]==rond && table[1][1]==rond && table[2][0]==vide) { x=2; y=0; table[x][y] = rond; return 1; }
+	
+	if (table[0][0]==croix && table[0][1]==croix && table[0][2]==vide) { x=0; y=2; table[x][y] = rond; return 1; }
+	if (table[1][0]==croix && table[1][1]==croix && table[1][2]==vide) { x=1; y=2; table[x][y] = rond; return 1; }
+	if (table[2][0]==croix && table[2][1]==croix && table[2][2]==vide) { x=2; y=2; table[x][y] = rond; return 1; }
+	if (table[0][0]==vide && table[0][1]==croix && table[0][2]==croix) { x=0; y=0; table[x][y] = rond; return 1; }
+	if (table[1][0]==vide && table[1][1]==croix && table[1][2]==croix) { x=1; y=0; table[x][y] = rond; return 1; }
+	if (table[2][0]==vide && table[2][1]==croix && table[2][2]==croix) { x=2; y=0; table[x][y] = rond; return 1; }
+	if (table[0][0]==croix && table[0][1]==vide && table[0][2]==croix) { x=0; y=1; table[x][y] = rond; return 1; }
+	if (table[1][0]==croix && table[1][1]==vide && table[1][2]==croix) { x=1; y=1; table[x][y] = rond; return 1; }
+	if (table[2][0]==croix && table[2][1]==vide && table[2][2]==croix) { x=2; y=1; table[x][y] = rond; return 1; }
+	if (table[0][0]==croix && table[1][0]==croix && table[2][0]==vide) { x=2; y=0; table[x][y] = rond; return 1; }
+	if (table[0][1]==croix && table[1][1]==croix && table[2][1]==vide) { x=2; y=1; table[x][y] = rond; return 1; }
+	if (table[0][2]==croix && table[1][2]==croix && table[2][2]==vide) { x=2; y=2; table[x][y] = rond; return 1; }
+	if (table[0][0]==vide && table[1][0]==croix && table[2][0]==croix) { x=0; y=0; table[x][y] = rond; return 1; }
+	if (table[0][1]==vide && table[1][1]==croix && table[2][1]==croix) { x=0; y=1; table[x][y] = rond; return 1; }
+	if (table[0][2]==vide && table[1][2]==croix && table[2][2]==croix) { x=0; y=2; table[x][y] = rond; return 1; }
+	if (table[0][0]==croix && table[1][0]==vide && table[2][0]==croix) { x=1; y=0; table[x][y] = rond; return 1; }
+	if (table[0][1]==croix && table[1][1]==vide && table[2][1]==croix) { x=1; y=1; table[x][y] = rond; return 1; }
+	if (table[0][2]==croix && table[1][2]==vide && table[2][2]==croix) { x=1; y=2; table[x][y] = rond; return 1; }
+	if (table[0][0]==croix && table[1][1]==vide && table[2][2]==croix) { x=1; y=1; table[x][y] = rond; return 1; }
+	if (table[0][2]==croix && table[1][1]==vide && table[2][0]==croix) { x=1; y=1; table[x][y] = rond; return 1; }
+	if (table[0][0]==vide && table[1][1]==croix && table[2][2]==croix) { x=0; y=0; table[x][y] = rond; return 1; }
+	if (table[0][2]==vide && table[1][1]==croix && table[2][0]==croix) { x=0; y=2; table[x][y] = rond; return 1; }
+	if (table[0][0]==croix && table[1][1]==croix && table[2][2]==vide) { x=2; y=2; table[x][y] = rond; return 1; }
+	if (table[0][2]==croix && table[1][1]==croix && table[2][0]==vide) { x=2; y=0; table[x][y] = rond; return 1; }
+
+	return 0;
+}
+
+/**
 * \fn void multijoueur(t_joueur joueur)
 * \brief Fonction permettant de demander si le joueur veut jouer contre une IA ou avec un ami
 * \param joueur permet de savoir qui doit jouer en premier en PvP
@@ -234,44 +293,92 @@ void IA_nulle(void){
 void multijoueur(t_joueur joueur){
 	int fini = 0;
 	int multi = -1;
+	int ia = -1;
 	affiche_entrer(2);
 	printf("Voulez-vous jouer contre une IA ou un partenaire?\n");
 	printf("Contre une IA : 1\nContre un partenaire : 2\n");
 	scanf("%i", &multi);
 	if (multi == 1){
-		joueur = premier_joueur();
-		joueur = joueur1;
-		while(fini == 0){
-			affichage_table();
-			if(nb_tour % 2 != 0){
-				affiche_tour(joueur, 0);
-				remplir_table(joueur);
-				nb_tour++;
-			} else {
-				affiche_tour(joueur, -1);
-				IA_nulle();
-				nb_tour++;
+		printf("Quel niveau d'IA ?\n");
+		printf("Basique : 1\nMoyen : 2\n");
+		scanf("%i", &ia);
+		if(ia == 1)
+		{
+			joueur = premier_joueur();
+			joueur = joueur1;
+			while(fini == 0){
+				affichage_table();
+				if(nb_tour % 2 != 0){
+					affiche_tour(joueur, 0);
+					remplir_table(joueur);
+					nb_tour++;
+				} else {
+					affiche_tour(joueur, -1);
+					IA_nulle();
+					nb_tour++;
+				}
+				if(fin_jeu())
+				{
+					fini = 1;
+				}
+				else if(verif_match_nul())
+				{
+					fini = 2;
+				}
+				else
+					fini = fin_jeu();
 			}
-			if(fin_jeu())
+			if(fini==1)
 			{
-				fini = 1;
-			}
-			else if(verif_match_nul())
-			{
-				fini = 2;
+				affichage_table();
+				victoire_IA();
 			}
 			else
-				fini = fin_jeu();
+			{
+				affichage_table();
+				printf("Match nul !");
+			}
 		}
-		if(fini==1)
-		{
-			affichage_table();
-			victoire_IA();
-		}
-		else
-		{
-			affichage_table();
-			printf("Match nul !");
+		else{
+			joueur = premier_joueur();
+			joueur = joueur1;
+			while(fini == 0){
+				affichage_table();
+				if(nb_tour % 2 != 0){
+					affiche_tour(joueur, 0);
+					remplir_table(joueur);
+					nb_tour++;
+				} else {
+					affiche_tour(joueur, -1);
+					int ia_normal;
+					ia_normal = IA_normal();
+					if(ia_normal == 0)
+					{
+						IA_nulle();
+					}
+					nb_tour++;
+				}
+				if(fin_jeu())
+				{
+					fini = 1;
+				}
+				else if(verif_match_nul())
+				{
+					fini = 2;
+				}
+				else
+					fini = fin_jeu();
+			}
+			if(fini==1)
+			{
+				affichage_table();
+				victoire_IA();
+			}
+			else
+			{
+				affichage_table();
+				printf("Match nul !");
+			}
 		}
 	} else {
 		joueur = premier_joueur(); // on détermine qui du joueur 1 ou du joueur 2 commence
